@@ -1,0 +1,16 @@
+#-----------------------------------------------------
+# Simple Soliton soln to the KdV eq.  
+#
+#
+set title "Soliton Solution of the KdV Equation";
+set dummy u,v;
+c= 3.0/5.0;
+f1(u,v) = exp(c*u - c^3 * v);
+f2(u,v) = 1.0 + f1(u,v);
+kdv(u,v) = 3*c^2 * f1(u,v) / (f2(u,v))^2;
+
+soliton = sur{[15*kdv(u,v)][u=-10:10][v=-10:10]};
+plot soliton;
+set notitle;
+set dummy x,y;
+#-----------------------------------------------------

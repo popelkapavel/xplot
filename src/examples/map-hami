@@ -1,0 +1,33 @@
+#---------------------------------------------------------
+#
+#    Sample code
+#                ----------- The hamiltonian map
+#
+# Plot 10 orbits of the hamiltonian map defined be
+#     [x,y]-->[hamX(x,y),hamY(x,y)]
+#---------------------------------------------------------
+
+function list {
+	alpha = 0.211434654
+	phi = 2.0*pi*alpha
+	hamX(x,y) = x*cos(phi)-(y - x* x)*sin(phi)
+	hamY(x,y) = x*sin(phi)+(y - x* x)*cos(phi)
+	};
+
+aa = object {
+	map{[hamX(x,y),hamY(x,y)] [initial=0.16:0.578][itera=1000][color=4]}
+	map{[hamX(x,y),hamY(x,y)] [initial=0.26:0.578][itera=1000][color=5]}
+	map{[hamX(x,y),hamY(x,y)] [initial=0.268:0.578][itera=1000][color=10]}
+	map{[hamX(x,y),hamY(x,y)] [initial=0.38:0.578][itera=1000][color=9]}
+	map{[hamX(x,y),hamY(x,y)] [initial=0.36:0.478][itera=1000][color=6]}
+	map{[hamX(x,y),hamY(x,y)] [initial=0.46:0.378][itera=1000][color=3]}
+	map{[hamX(x,y),hamY(x,y)] [initial=0.06:0.578][itera=1000][color=2]}
+	map{[hamX(x,y),hamY(x,y)] [initial=0.46:0.300][itera=1000][color=1]}
+	map{[hamX(x,y),hamY(x,y)] [initial=0.20:0.278][itera=1000][color=7]}
+	map{[hamX(x,y),hamY(x,y)] [initial=0.10:0.178][itera=1000][color=8]}
+	};
+#---------------------------------------------------------
+plot2d aa;
+#---------------------------------------------------------
+
+

@@ -1,0 +1,25 @@
+#---------------------------------------------------------
+#
+#      Sample code 
+#                ----------- The rossler attractor
+#
+# Note: Need about 10 minutes to solve this equation 
+#
+#---------------------------------------------------------
+
+ROS = 5.6
+ROSdy1dt (x,y,z) = -(y + z)
+ROSdy2dt (x,y,z) = x + 0.2 * y
+ROSdy3dt (x,y,z) = 0.2 + z * (x - ROS)
+
+rossler = eqn{
+      [ROSdy1dt(x,y,z),ROSdy2dt(x,y,z),ROSdy3dt(x,y,z)]
+      [initials = 0.46:0.20:0.69] 
+      [time = 0.0:500.0]  [step = 0.002] [skip 5]
+      [method = RKQC][small = 0.00000001] 
+      [axes: automatic]
+    };
+#---------------------------------------------------------
+plot rossler;
+#---------------------------------------------------------
+

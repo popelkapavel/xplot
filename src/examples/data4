@@ -1,0 +1,5 @@
+#
+#
+# a=sur{["./data/snub_dodecahedron"]};
+a=sur{["./data/snub_dod"]};
+plot a

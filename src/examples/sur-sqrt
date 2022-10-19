@@ -1,0 +1,24 @@
+
+#-------------------------------------------------------------------------
+#
+#      Test program 
+#                ----------- The Riemann surface for sqrt(z)
+#
+#
+# The Riemann surface for w = sqrt(z) is realized by picing the
+# 2 branches together
+
+zz(x,y) = x *exp(i * y)
+sqtzX(x,y) = real(zz(x,y))
+sqtzY(x,y) = imag(zz(x,y))
+sqtzZ(x,y) = real( sqrt(zz(x,y)))
+
+# we need to define 2 branches, one with sqrt(1) = 1; the other with
+# sqrt(1) = -1
+
+sqrt = object{
+	mat default;
+        sur{[sqtzX(x,y),sqtzY(x,y),sqtzZ(x,y)] [x=0:1][y=0:2*pi] [samp=32:32]}
+        sur{[sqtzX(x,y),sqtzY(x,y),-sqtzZ(x,y)] [x=0:1][y=0:2*pi] [samp=32:32]}
+	};
+#-------------------------------------------------------------------------

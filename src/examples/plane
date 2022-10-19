@@ -1,0 +1,15 @@
+#-----------------------------------------------------------------------
+#
+#   The f16 jet
+#
+
+plane= obj{
+	body = sur{["./data/plane/body"]}
+	window = sur{["./data/plane/window"]}
+	};
+flame = sur{["./data/plane/flame"]}
+
+plot plane, flame
+#------------------------------------------------------------------------
+
+		

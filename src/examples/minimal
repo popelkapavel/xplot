@@ -1,0 +1,35 @@
+#
+# Minimal surfaces
+#
+set dummy u,v,alpha, beta;
+#
+#  Enneper's surface
+#
+Enneper = sur{[u-u**3/3+u*v**2,v-v**3/3+v*u**2,u**2-v**2]
+		[u=-1:1][v=-1:1]}
+#
+# The Catanoid
+#
+Catanoid = sur{[cosh(u)*cos(v), 3*u, -cosh(u)*sin(v)]
+		[u=-pi:pi][v=-pi:pi]};
+
+#
+# The Helicoid
+#
+X(u,v,alpha,beta)=alpha*( cosh(u)*cos(v)*cos(beta) + sinh(u)*sin(v)*sin(beta));
+Y(u,v,alpha,beta)=alpha*(-cosh(u)*sin(v)*cos(beta) + sinh(u)*cos(v)*sin(beta));
+Z(u,v,alpha,beta)=3*alpha* u * cos(beta) + 3* alpha * v * sin(beta);
+const = 0.5*pi;
+Helicoid = sur{[ X(u,v,1,const),Y(u,v,1,const),Z(u,v,1,const)]
+		[u=-pi,pi][v=-pi,pi]};
+#
+#plot Catanoid;
+
+#!sleep 5
+
+#plot Enneper;
+
+plot Helicoid;
+
+
+

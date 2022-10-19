@@ -1,0 +1,13 @@
+#
+# The trefoil 
+#
+set dummy t;
+
+tref = tube{ [ -2*cos(t)- 1/2*cos(5*t)+ 3*sin(2*t),
+		-3*cos(2*t)+ 2*sin(t)- 1/2*sin(5*t), 
+		2*cos(3*t)]
+	    [ t=0: 2*pi][sample=100:20][radius=0.4]};
+plot tref;
+!sleep 100
+
+	

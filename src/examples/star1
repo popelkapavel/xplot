@@ -1,0 +1,10 @@
+#
+#     Some Parametric plots
+#
+
+p1 = sur{[(2+sin(8*x)*0.7)*(cos(x+0.25*sin(16*x)))*y,
+	   (2+sin(8*x)*0.7)*(sin(x+0.25*sin(16*x)))*y,sin(8*x)*y]
+	 [x=0, 2*pi][y=0:1][sample= 300:10]};
+
+plot p1;
+

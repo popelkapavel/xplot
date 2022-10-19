@@ -1,0 +1,5 @@
+#
+#
+
+mushroom = sur{["./data/mushroom.off"]};
+plot mushroom;

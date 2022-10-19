@@ -1,0 +1,7 @@
+#
+#     Some Parametric plots
+#
+
+trochoid = sur{[x, y-x*sin(y), 1-x*cos(y)][x=0,4][y=0, 5*pi]
+		[sample = 20:100]};
+plot trochoid;

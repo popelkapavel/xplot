@@ -1,0 +1,26 @@
+#!echo
+#---------------------------------------------------------------
+#
+!echo    "To get the best view";
+!echo        "---- use the Rainbow Colormap (under the misc menubar)";
+!echo        "---- and choose the depthcue shading";
+#
+#---------------------------------------------------------------
+
+lambda = 3.5;
+f(x) = lambda * x*(1-x);
+
+a = cur{[x,f(x),0][x=0:1][samples=300][color=red]};  # y = f(x)
+b = cur{[x,x,0] [x=0,1][sample=10][color=green]};    # y = x
+
+# the map
+#      (x, y) -> (y, f(x))
+# The z-component is not relevent (in plot2d) but it is
+# helpful to get a depthcue shading.
+#
+
+c = map{[y,f(x),0.002+z][initial=0.1,f(0.1),-1]      
+	[iterates=400][color=blue][style=solid]}
+
+plot2d  a, b, c;
+#---------------------------------------------------------------

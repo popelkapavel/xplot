@@ -1,0 +1,17 @@
+#
+# More minimal surfaces
+#
+set dummy u,v;
+n = 1;
+
+X(z) = real( 0.5*(1./z - z^(2*n+1)/(2*n+1)) );
+Y(z) = imag( 0.5*(-1./z + z^(2*n+1)/(2*n+1)) );
+Z(z) = real( z^n/n);
+
+e1 =sur{[X( v*sin(u) + i* v *cos(u)),
+	 Y( v*sin(u) + i* v *cos(u)),
+	 Z( v*sin(u) + i* v *cos(u))]
+	[u = -pi: pi][ v= 1.0/3.0: 6.0/5.0]
+	[sample = 80*n, 80]};
+
+plot e1;

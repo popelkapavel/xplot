@@ -1,0 +1,28 @@
+#
+# More minimal surfaces
+#
+# Higher order Enneper's surfaces
+#
+set dummy u,v;
+set title "Enneper's minimal surface";
+n = 3;
+
+if(n > 1) {set title "Higher order Enneper's minimal surface";}
+
+
+X(z) = real( 0.5*(z - z^(2*n+1)/(2*n+1)) );
+Y(z) = imag( 0.5*(z + z^(2*n+1)/(2*n+1)) );
+Z(z) = real( z^(n+1)/(n+1));
+e1 =sur{[X( (v)*(sin(u) + i* cos(u))),
+	 Y( (v)*(sin(u) + i *cos(u))),
+	 Z( (v)*(sin(u) + i* cos(u)))]
+	[u = 0: pi][ v= -1.2: -0.5]
+	[sample = 40, 40]};
+
+e2 =sur{[X( (v)*(sin(u) + i* cos(u))),
+	 Y( (v)*(sin(u) + i *cos(u))),
+	 Z( (v)*(sin(u) + i* cos(u)))]
+	[u = 0: pi][ v= 1.2: 0.5]
+	[sample = 40, 40]};
+o=obj{e1,e2};
+plot o;

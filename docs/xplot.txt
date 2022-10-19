@@ -1,0 +1,29 @@
+
+I have uploaded:
+
+/pub/simtelnet/msdos/math/
+xplot012.zip    Xplot v0.12: 3D ploting program, bin+src
+
+Xplot v0.12 is dos port of unix Xplot, Version Beta Feb. 9,1995. Zip
+contains binary, C source, examples. For compiling you need DJGPP and GRX
+graphics library.
+Xplot is capable of displaying simple objects that have easily described
+geometries. You can define your own functions via some of the standard math
+functions and operators. It calculate also with complex numbers. It plots
+3d curves, surfaces, tubes or data files. It has filled polygon, wire over
+poly, wireframe, hidden wireframe display modes and contours displaying. 
+Export of 3D view into ppm and postscript file. Examples contains 
+klein bottle, mobius strip, minimal surfaces and others.
+
+Special requirements: i386 or higher, FPU, VGA
+
+Changes: bugfix, (tmp files, html manual)
+
+xplot012.zip has replaced xplot010.zip
+
+GNU. Uploaded by porter.
+
+Popelka Pavel
+popelka_pavel@mail.cz
+http://popelka.misto.cz/xplot/
+

@@ -1,0 +1,11 @@
+#
+#     Some Parametric plots
+#
+a=9; b=6; c=6;
+f(x,y) = (2+sin(a*x)*0.5)*cos(x+sin(b*x)/c)*y;
+g(x,y) = (2+sin(a*x)*0.5)*sin(x+sin(b*x)/c)*y;
+
+p2 = sur{[f(x,y),g(x,y),2*sin(x)*y]
+	 [x=0, 2*pi][y=0:1][sample= 300:10]};
+
+plot2d p2

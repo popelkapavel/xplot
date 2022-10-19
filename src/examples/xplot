@@ -1,0 +1,27 @@
+
+graph list{
+	x1 = tube{[15+x,1.7*x,-5][x=-7:7][sample=30:12]
+		[radius=0.6*cos(3*x)+1.2]};
+	x2 = tube{[15+x, -1.7*x,-5][x=-7:7][sample=30:12]
+		[radius=0.6*cos(3*x)+1.2]};
+	p1 = tube{[5.8, x,0][x=4:-4][sample=3:10][radius=0.7]};
+	p2 = tube{[6.4+2.8*cos(x),1.5-2*sin(x),0][x=-0.5*pi,0.5*pi]\
+		[sample=10:10][radius=0.7]};
+	l1 = tube{[11,x,0][x=-4:4][sample=2:10][radius=0.7]};
+	l2 = tube{[11+x,-3.5,0][x=0,3.5][sample=2:10][radius=0.7]};
+	o =  tube{[17.5+1.8*sgn(cos(x))* ( abs(cos(x)))^0.4,
+		        3*sgn(sin(x))* ( abs(sin(x)))^0.4,0]
+		[x=0:2*pi][sample=20:10] [radius=0.7]};
+	t1 = tube{[20.8+x,3.0,0][x=0:5][sample=2:10][radius=0.7]};
+	t2 = tube{[23.3,x,0][x=-4:2.5][sample=2:10][radius=0.7]};
+
+};
+X = obj{x1,x2};
+P = obj{p1,p2};
+L = obj{l1,l2};
+O = obj{o};
+T = obj{t1,t2};
+
+plot2d  X P L O T;
+
+

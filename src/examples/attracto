@@ -1,0 +1,21 @@
+#-----------------------------------------------------------------
+#
+#     A 2D Cantor set
+#
+#-----------------------------------------------------------------
+
+set title "Triangular Cantor Set"
+
+	quatroot3=sqrt(3)*0.25;
+	g11(x,y) = 0.5*x;     g12(x,y)=0.5*y;
+	g21(x,y)=0.5*x+0.5;   g22(x,y)=0.5*y;
+	g31(x,y)=0.5*x+0.25;  g32(x,y)=0.5*y+quatroot3;
+
+Gx(x,y,z)=(z<=0.33? g31(x,y):(z<=0.67? g11(x,y):g21(x,y)));
+Gy(x,y,z)=(z<=0.33? g32(x,y):(z<=0.67? g12(x,y):g22(x,y)));
+Gz(x,y,z)=0.01*(rand()%100);
+
+triangle = map{[Gx(x,y,z),Gy(x,y,z),Gz(x,y,z)]
+		[initial=0.:0.:1][itera=10000][color=green]};
+
+plot2d triangle;

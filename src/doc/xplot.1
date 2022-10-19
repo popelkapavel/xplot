@@ -1,0 +1,37 @@
+
+
+XPLOT(1)                  USER COMMANDS                 XPLOT(1)
+
+
+NAME
+     xplot  --a 3D function plotting program under X11.
+
+SYNOPSIS
+     xplot	
+
+DESCRIPTION
+       XPLOT is a command and menu driven interactive plotting
+     program for X windows.  Currently it only runs on 8 bit 
+     pseudo color visuals. 
+
+       XPLOT reads instructions from  the  standard in and produces
+     plots based on these  instructions. Once a plot is done, the 
+     plotted graphical objects can be manipulated by  mouse input.
+
+       XPLOT is also an data viewer. Currently, it only knows
+     object in OFF format or in MESH format.
+
+       For a complete description, please read the xplot tutorial.
+
+	
+EXAMPLES:
+              In[1] : f(x,y) = sin(x) * cos(y);
+              In[2] : example1 = surface{[f(x,y)][x=-pi:pi][y=-6:6]}
+  	      In[3] : example2 = curve{[x,sin(x),0][x=0:10]}
+              In[4] : example3 = tube{[sin(x),cos(x),0][x=0:2*pi][radius=0.1]}
+              In[5] : plot example1, example2, example3;
+
+VERSION:  Beta  Feb 9, 1995
+
+
+

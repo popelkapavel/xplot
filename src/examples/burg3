@@ -1,0 +1,8 @@
+set dummy x,t;
+c1 = 0.5; c2 = 1.0;
+
+f(x,t) = (c1*exp(c1*(x+c1*t)) +c2*exp(c2*(x+c2*t)))/ \
+	(1. + exp(c1*(x+c1*t)) + exp(c2*(x+c2*t)));
+
+a = sur{[8.0*f(x,t)][x=-10:20][t=-20:10]};
+plot a;

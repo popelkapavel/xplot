@@ -1,0 +1,7 @@
+
+Xplot is a partial port of IRISPLOT written three years ago for
+the SGI graphics workstations. This port is a hack by the author
+from  Eric H. Echidna's (echidna@munnari.OZ.AU) vogl.  The original
+IRISPLOT was based on SGI's gl library and Colin Kelley and 
+Thomas William's (info-gnuplot@dartmouth.edu) gnuplot.
+

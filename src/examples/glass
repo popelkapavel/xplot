@@ -1,0 +1,3 @@
+
+glass = sur{["./data/glass"][sample=16:16]}
+plot 

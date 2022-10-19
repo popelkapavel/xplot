@@ -1,0 +1,5 @@
+
+set dummy x,t;
+c = 1;
+a = surf{[ c + c* tanh(c*x + 2*c^2 *t)][x =-10:10][t=-10:10]};
+plot a;

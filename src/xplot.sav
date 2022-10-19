@@ -1,0 +1,12 @@
+
+#		 Xplot Record File
+# If you want to load this file later, do not modify it.
+#
+In[1] : c1 = 1; c2 = 0.1;  
+In[2] : set dummy x,t;  
+In[3] : f(x,t) = c1 *  exp( c1 *x + c1^2 * t) /  (1. + exp( c1 *x + c1^2 * t) + exp( c2 *x + c2^2 * t) );  
+In[4] : a = sur{[8.0* f(x,t)][x=-10:10][t=-20:10]};  
+In[5] : plot a;  
+In[6] : #---- dir 
+In[7] : #---- quit 
+In[8] : #---- quit

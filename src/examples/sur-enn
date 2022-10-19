@@ -1,0 +1,13 @@
+#
+# Minimal surfaces
+#
+set dummy u,v
+enne = sur{[u-u**3/3+u*v**2,v-v**3/3+v*u**2,u**2-v**2][u=-1:1][v=-1:1]}
+catanoid = sur{[cosh(u)*cos(v), 3*u, -cosh(u)*sin(v)]
+		[u=-pi:pi][v=-pi:pi]};
+
+plot catanoid;
+!sleep 5
+plot enne;
+
+

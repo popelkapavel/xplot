@@ -1,0 +1,26 @@
+#---------------------------------------------------------------
+#
+#      Sample code
+#                ----------- multiple objects
+#
+#---------------------------------------------------------------
+
+TorusX(x,y) = cos(y) * (10.0 + 2.0 * cos(x))
+TorusY(x,y) = sin(y) * (10.0 + 2.0 * cos(x))	
+TorusZ(x,y) = 2.0*sin(x)
+
+t1 = surf{[TorusX(x,y),TorusY(x,y),TorusZ(x,y)-4]
+	[x= -pi:pi][y= -pi:pi][samp=30:60]};
+
+t2 = surf{[TorusX(x,y),TorusY(x,y),TorusZ(x,y)+4]
+	[x= -pi:pi][y= -pi:pi][samp=30:60]};
+
+torus = object{ t1,t2}
+
+sphere= sur{[4*cos(x)*cos(y),4*cos(x)*sin(y),4*sin(x)][x=-pi/2:pi/2]
+	[y=0:2*pi]}
+
+
+#---------------------------------------------------------------
+
+

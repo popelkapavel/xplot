@@ -1,0 +1,17 @@
+#
+# Two Soliton soln to the KdV eq.
+#
+set dummy x,t;
+c1 = 0.5; c2 = 4./5.;
+e1(x,t)=exp(c1*x - c1^3 *t);
+e2(x,t)=exp(c2*x - c2^3 *t);
+a12(x,t) = ( (e1(x,t) - e2(x,t))/(e1(x,t)+e2(x,t)))^2;
+e12(x,t) = a12(x,t)*e1(x,t)*e2(x,t);
+f(x,t) = 1. + e1(x,t) + e2(x,t) + e12(x,t);
+fx(x,t) = c1 *e1(x,t) + c2 *e2(x,t) + (c1+c2)*e12(x,t);
+fc(x,t) = c1*e1(x,t) + c1 * e12(x,t);
+fxc(x,t) = c1^2*e1(x,t) + c1*(c1+c2)*e12(x,t);
+func(x,t) = (fxc(x,t)*f(x,t) - fx(x,t) *fc(x,t))/(f(x,t)^2);
+
+a=sur{[30.*func(x,t)][x=-15:15][t=-15:15][sample=60:60]};
+plot a;

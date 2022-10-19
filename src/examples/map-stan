@@ -1,0 +1,23 @@
+#---------------------------------------------------------
+#
+#      Sample code
+#                ----------- The stand map
+# 
+#---------------------------------------------------------
+
+k = 0.9
+stanX(x,y) = x + k * sin(y)
+stanY(x,y) = y + x + k * sin(y)
+
+smap = object {
+   map{[stanX(x,y),stanY(x,y)] [initial=0.16:0.878][itera=1000][color=1]}
+   map{[stanX(x,y),stanY(x,y)] [initial=0.16:0.978][itera=1000][color=2]}
+   map{[stanX(x,y),stanY(x,y)] [initial=0.16:1.078][itera=1000][color=3]}
+   map{[stanX(x,y),stanY(x,y)] [initial=0.26:0.878][itera=1000][color=4]}
+   map{[stanX(x,y),stanY(x,y)] [initial=0.06:0.878][itera=1000][color=5]}
+   };
+#---------------------------------------------------------
+
+plot2d smap;
+#---------------------------------------------------------
+

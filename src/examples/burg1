@@ -1,0 +1,12 @@
+#
+# Solitons
+# 
+c1 = 1; c2 = 0.1;
+set dummy x,t;
+
+f(x,t) = c1 *  exp( c1 *x + c1^2 * t) / \
+(1. + exp( c1 *x + c1^2 * t) + exp( c2 *x + c2^2 * t) );
+
+a = sur{[8.0* f(x,t)][x=-10:10][t=-20:10]};
+plot a;
+

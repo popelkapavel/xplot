@@ -1,0 +1,16 @@
+#
+# More minimal surfaces
+#
+#
+set dummy u, v;
+
+X(u,v) = cosh(2*u)*cos(2*v) -1.0;
+Y(u,v) = -sinh(u)*sin(v) - 1./3. *sinh(3*u)*sin(3*v);
+Z(u,v) = -sinh(u)*cos(v) - 1./3. *sinh(3*u)*cos(3*v);
+
+e1 =sur{[1.5*X(u,v),Y(u,v),Z(u,v)]
+	[u = -1: 1][ v= -1: 1]
+	[sample = 40, 40]};
+
+plot e1;
+#---------------------------------------------------------

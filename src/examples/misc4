@@ -1,0 +1,9 @@
+#---------------------------------------------
+#
+# more examples
+#
+set dummy u,v;
+set title "Yet Another Parametric Surface"
+a=sur{[sin(u*v)] [u=-pi:pi][v=-pi:pi][sample=40:40]};
+plot a;
+set dummy x,y;

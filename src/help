@@ -1,0 +1,139 @@
+
+	X P L O T,  Version Beta  Feb.  9, 1995
+	Maorong Zou, Dept. of Math. UT Austin
+help:
+	Usage: help topic. Available topics are:
+
+	surface,   curve,   tube,   datafile,   object,   
+	function,   variable,   dummy_variable,   operator,   plot,   
+	show,   quit,   title,   save,   load,   
+	
+
+surface:
+	 A surface is either the graph of a 2 variable function f(x,y) or a
+	 parametric surface or a polygon list described by the OFF format.
+	 For example,
+ 	  a = surface{[ exp( -(x^2+y^2)) ][x= -1:1][y=-1:1]};
+	  b = surface{[ cos(x)*cos(y),cos(x)*sin(y),sin(x)][x=-0.5*pi,0.5*pi]
+		 [y=0:2*pi] [sample=30:40]};
+	  c = surface{["sample_data_file"]};
+
+
+curve:
+	 A space curve can be defined by a data_file or by its parametric 
+	 coordinate functions. 
+ 	   For example,
+	    d = curve{["sample_datafile"][style=points]};
+	    e = curve{[sin(x),cos(x),0][x=0:2*pi][sample=200][color=red]};
+	 There are two styles for curves. Solid (default) and points.
+
+tube:
+	 Tube defines a tube around a space curve, 
+	   For example,
+	    torus =tube{[cos(x),sin(x),0][x=0:2*pi][radius=0.3][sample=80:20]};
+	    torus1=tube{[cos(x),sin(x),0][x=0:2*pi][radius=0.15+0.1*sin(x)]};
+	    f = tube{["sample_datafile"][radius=0.2]};
+
+datafile:
+	 Xplot accepts the following types of datafiles.
+		 M by N GRID 
+	 where the datafile contains of MN lines, each line consists of
+	 three floats (the x,y,z coordinates of a point). This type of data
+	 can be used to define a surface, for example
+		 g = surf{["grid_data"][sample=32:32]};
+	 A M by 1 grid can be used to define a curve or a tube, for example,
+		 h=curve{["A_M_by_1_grid"]}; i=tube{["M_by_1_data"][radius=1]}
+		 Polygon list (OFF format)
+	 This type of data can be used to define a surface. 
+
+object:
+	 An object is a group of simple graphs, for example
+		  a = sur{[x*y][x=-1:1][y=-1:1]};
+		  b = cur{[x,x^2,x^3][x=-1:1]};
+		  o=object{ a, b}
+
+function:
+	 You can define your own functions via some of the standard math
+	 functions and operators. For example
+		 f(x) = exp( sin(x) +0.2);
+		 g(x,y) = tan(x) + log( abs(x)) *sqrt( x^2+1);
+		 r(x)=(x<=0.0? -4*x + 0.1 : (x<=2.0? 0.1: sqrt((1.3*(x-2)))))
+	 Here is a list of bulid in functions
+
+		  sin   cos     tan   
+		  sinh  cosh    tanh  
+		  asin  acos    atan 
+		  abs   sqrt    pow   
+		  log   log10   exp   
+		  real imag conjg arg  
+		  besj0  besj1  besy0 besy1  
+		  floor  ceil   int  
+		  rand   
+
+variable:
+	 Variable are just numbers, for example,
+		 sqrt3 = sqrt(3);
+		 lambda = real( exp( 3 + 2* i));
+	 There are two internal variables, pi = 3.1415926,  i= sqrt(-1);
+
+dummy_variable:
+	 Dummy variables are names of function arguments. The defaults are
+		  x, y, z, w
+	 You can overwrite the defaults by the 'set dummy' command. For example
+		 set dummy u,v;
+	 will set the dummy variables to  u,v,z,w. To see what are the current
+	 dummy variables, use the 'show dummy' command.
+
+operator:
+	 Here is a list of math operators,
+		    +    -    *    /    %       (basic arithmetic) 
+		    ^    **                     (exponentiation) 
+		    &&   ||   !                 (logical) 
+		    ==   <=   >=  >   <   !=    (relational) 
+	 These operators can be used in defining variables and functions.
+
+plot:
+	 To plot a defined object, use 'plot obj_name'. For example
+		  a = sur{[sin(x)*cos(y)]};
+		  plot a;
+
+show:
+	 The 'show' command displays you the defined objects. for example,
+		 show func
+	 displays all the defined functions and the command 
+		 show all
+	 displays all the defined objects (functions, variables, graphical objs)
+
+quit:
+	 The 'quit' command terminates Xplot. If followed by a string (meanining	 text in double quotes), it save all your command to the file with name
+	 the string. For example,
+		 quit "session1"
+	 will save all your command to 'session1'
+
+
+title:
+	 The 'set title' command allows you to set the plot title. For example
+		  set title "This is a sample plot"
+	 produces a plot title "This is a sample plot".
+	 Once a plot is done, you can move the position of the text by picking
+	 the text with the left mouse button and move the pointer around. The 
+	 color of the title may be modified by pressing the middle mouse button 
+	 on the text. You can also change the font by pressing the right button
+	 on the text.
+
+	 To disable the plot title, use the command 'set notitle'
+
+	 To see the current plot title, use the command 'show title'
+
+save:
+	 The 'save' command save selected commands to a file. For example,
+		 save all "xplot.com"
+	 save all commands entered to the file "xplot.com"
+	 File saved by xplot can be loaded later via the `load` command.
+
+load:
+	 The 'load' command reads and executes the commands from a file.
+	 For example,
+		 load "xplot.com"
+	 executes all commands in "xplot.com"
+

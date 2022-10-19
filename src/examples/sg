@@ -1,0 +1,15 @@
+#
+#  Kink-Kink soln to the sine-gordon eq,
+#
+set dummy x,t;
+c1 = 1.5; c2 = 0.9;
+
+e1(x,t)= exp(c1*x - 1./c1 *t);
+e2(x,t)= exp(c2*x - 1./c2 *t);
+e12(x,t) = e1(x,t)*e2(x,t);
+f(x,t) = (c1-c2)*(1+e12(x,t));
+g(x,t) = (c1+c2)*(e1(x,t)-e2(x,t));
+func(x,t) = 4.0* atan(g(x,t)/f(x,t));
+
+a=sur{[func(x,t)][x=-25,25][t=-25,25]};
+plot a;

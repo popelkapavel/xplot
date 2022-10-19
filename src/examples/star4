@@ -1,0 +1,9 @@
+#
+#  parametric surface (star)
+#
+f(x,y) = 4*x*cos(y)-x*cos(4*y);
+g(x,y) = 4*x*sin(y) + x*sin(4*y);
+h(x,y) = -6*cos(x);
+
+a=sur{[f(x,y),g(x,y),h(x,y)][y=0:2*pi][x=0.1:6][sample=20:40]};
+plot a;

@@ -1,0 +1,23 @@
+#------------------------------------------------------------
+#
+#     Sample code
+#                ----------- The Klein bottle
+#
+#------------------------------------------------------------
+set dummy u,v;
+set title "The Klein Bottle";
+
+
+KleinX(u,v) = (2*sin(u)*cos(v/2)-sin(2*u)*sin(v/2)+8)*cos(v);
+KleinY(u,v) = (2*sin(u)*cos(v/2)-sin(2*u)*sin(v/2)+8)*sin(v);
+KleinZ(u,v) = 2*sin(u)*sin(v/2)+sin(2*u)*cos(v/2);
+
+klein = surf{
+           [KleinX(u,v),KleinY(u,v),KleinZ(u,v)]
+           [u=-pi:pi][v=-pi:pi][samp=50:30]
+          };
+
+#------------------------------------------------------------
+
+plot klein;
+#------------------------------------------------------------

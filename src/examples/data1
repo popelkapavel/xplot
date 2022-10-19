@@ -1,0 +1,6 @@
+#
+#  To get a good view, turn of the two_side lighting off
+#
+
+dodec = sur{["./data/dodec.off"]}
+plot dodec

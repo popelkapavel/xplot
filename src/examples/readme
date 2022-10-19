@@ -1,0 +1,49 @@
+-----------------------------------------------------------------
+This directory contains a set of simple examples. They can be
+loaded via the xplot load command. For example,
+
+ load "star3"
+
+will load and execute the commands in "star3".
+
+-----------------------------------------------------------------
+
+Some Simpel Descriptions:
+
+ xplot: 
+ objs:
+ sur-obj:  examples of multiple objects.
+
+ curve3: a threed curve (press the 'depthcue' button to get a 3D view)
+
+ star1:
+ star2:      
+ star3: 
+ sur-klein:
+ sur-torus:
+ sur-sqrtz:    examples of surface plot.
+ sur-logz: 
+ sur-t:
+ sur-p:
+ trefoil:
+
+
+ tube:
+ objs:    tubeplot examples.
+ cup:  	
+
+
+The following 4 are examples of fractals, be patient if you have
+a slow machine !!
+
+ fern:       Barnsley's famous fern
+ attractor:  2D Cantor set (fractal)
+ sur-julia:  a julia set (fractal)
+ sur-mand:   the Mandlebrot set
+
+#-----------------------------------------------------
+ data1--data4:
+ klein:
+ glass:
+ plane:         examples of using data files. 
+

@@ -1,0 +1,29 @@
+#---------------------------------------------------------
+#
+#   Sample code
+#		------- The henon-heils equqtion
+#
+#  Note: Need about  10 minutes to solve this equation
+#
+#---------------------------------------------------------
+		
+function definitions {
+	HEdy1dt(x,y,z,w) = z
+	HEdy2dt(x,y,z,w) = w
+	HEdy3dt(x,y,z,w) = -x*( 1.0 + 2.0 * y)
+	HEdy4dt(x,y,z,w) = - y *(1.0 - y) - x* x
+	};
+
+hh = object {
+	 eqn {
+	       [HEdy1dt(x,y,z,w),HEdy2dt(x,y,z,w),
+		HEdy3dt(x,y,z,w),HEdy4dt(x,y,z,w)]
+	        [initials:  0.02,-0.02,0.14,-0.15] 
+	        [time = 0.0:600.0] [step = 0.002][ skip 5]
+		[method = RKQC] [small = 0.0000000001]
+                [axes: auto]
+	      };
+           };
+#---------------------------------------------------------
+plot hh;
+#---------------------------------------------------------

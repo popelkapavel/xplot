@@ -1,0 +1,59 @@
+:: --------------------------------------------------
+:: Math operators and functions:
+:: 
+:: Operators:
+:: 
+:: 	  +    -    *    /    %
+:: 
+:: 	  ^    **
+:: 
+:: 	  &&   ||   !
+:: 
+::        ==   <=   >=   >   <    !=
+:: 
+:: Functions:
+:: 
+::       sin   cos     tan   
+:: 	 sinh  cosh    tanh
+:: 	 asin  acos    atan
+:: 	 abs   sqrt    pow  
+::       log   log10   exp  
+:: 
+:: 	 real imag conjg arg 
+:: 
+:: 	 besj0  besj1  besy0 besy1
+:: 	 floor  ceil   int
+:: 
+::       rand  
+:: --------------------------------------------------
+::  
+::  Surfaces:
+::  
+;;       a=sur{ [ x^2+y^2 ]};
+;;       b=sur{ [ x^2+y^2 ][x=-1:1][y=-1:x]};
+;;       c=sur{ [ x^2+y^2 ][x=-1:1][y=-1:1] [sample=40:20]};
+;;       d=sur{ [x^2, y, x^2+y^2 ][x=-1:1][y=-1:1]};
+::     
+;;       e=sur{ ["data" ][sample=32:32]] };
+:: 
+:: Curves:
+:: 
+::       a= cur{["data"]};
+::       b= cur{["data"][sample=2000] [style=dots]};
+::       c= cur{[x,x^2,x^3] [color= red]};
+::       d= cur{[x,x^2,x^3][x=-4:4][sample=2000]};
+;;
+;; Tube: 
+;;       a=tube{["data"][radius=0.5]}
+;;       b=tube{["data"][radius=0.5][sample=1000:20]}
+;;       c=tube{[0,0,x] [x=-4:4] [radius=0.1*x^2]}
+;;       d=tube{[0,0,x] [x=-4:4] [radius=0.1+0.1*x^2][sample=40:20]}
+;;
+;; 
+;; Map and Ode stuff (see examples in ./examples)
+;;    
+;; 
+;;
+
+
+

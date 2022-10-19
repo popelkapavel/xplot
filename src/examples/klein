@@ -1,0 +1,3 @@
+
+klein = sur{["./data/klein"][sample=65:17]};
+plot klein;

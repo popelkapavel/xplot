@@ -1,0 +1,28 @@
+
+This is the beta release of Xplot, a 3D ploting program for X11.
+
+-----------------------------------------------------------------
+To compile, just type 
+
+  make;
+
+in this directory. You may have to edit the "CC= gcc -O4" line in
+the Makefile if you don't have gcc (or you don't want to use gcc :-(
+
+-----------------------------------------------------------------
+To install, edit the first two lines in the Makefile in this directory
+and then do a
+
+make install;
+
+-----------------------------------------------------------------
+The doc directory contains a simple LaTeX document "tutor.tex",
+You need to do "latex tutor.tex" twice to get the table of contents
+right.  I recommand you to print out a copy since  the online
+help in this beta version is very sketchy.
+
+-----------------------------------------------------------------
+The example directory contains a set of simples objects. 
+They can be loaded  via the 'load' command.
+
+
